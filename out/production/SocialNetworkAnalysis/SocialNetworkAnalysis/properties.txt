@@ -1,0 +1,5 @@
+#Properties for Social Network Analysis.
+#Thu Feb 01 13:35:56 CST 2018
+minError=0.001
+filePath=/Users/hajiang2/Documents/CatchSync/test.txt
+maxIter=100

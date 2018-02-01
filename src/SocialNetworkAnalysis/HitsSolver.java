@@ -59,10 +59,10 @@ public class HitsSolver {
 
     private void calculateHits() {
         // Parameters used to control the iteration
-        int maxIter = 100;
-        double minError = 0.001;
+        int maxIter = Integer.parseInt(PropertiesUtil.getProperty("maxIter"));
+        double minError = Double.parseDouble(PropertiesUtil.getProperty("minError"));
         // Start iterations
-        System.out.println("Start iterations of HITS. (Maximum " + maxIter + ")");
+        System.out.println("Start calculating HITS. (Maximum " + maxIter + " iterations)");
         for(int i = 0; i < maxIter; i++) {
 
             // Used for normalization
@@ -105,7 +105,6 @@ public class HitsSolver {
                 System.out.println("Error of HITS is accepted after " + (i + 1) + " iterations.");
                 break;
             }
-
         }
     }
 

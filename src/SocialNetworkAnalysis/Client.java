@@ -3,8 +3,10 @@ package SocialNetworkAnalysis;
 import java.util.Map;
 
 public class Client {
+
     public static void main(String[] args) {
-        String filePath = "/Users/hajiang2/Documents/CatchSync/test.txt";
+
+        String filePath = PropertiesUtil.getProperty("filePath");
 
         HitsSolver hits = new HitsSolver();
         hits.solve(filePath);
@@ -16,6 +18,5 @@ public class Client {
 
         SyncSolver sync = new SyncSolver();
         sync.solve(map);
-
     }
 }
