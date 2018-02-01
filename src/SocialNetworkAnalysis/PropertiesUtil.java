@@ -11,10 +11,10 @@ import java.util.Properties;
  */
 public class PropertiesUtil {
 
-    private PropertiesUtil() {}
-
     private static String filePath = PropertiesUtil.class.getResource("").getPath();
     private static Properties properties = new Properties();
+
+    private PropertiesUtil() {}
 
     private static void resetProperties() {
         // Reset the properties file
@@ -36,6 +36,7 @@ public class PropertiesUtil {
             resetProperties();
             return getProperty(key);
         }
+
         String value = properties.getProperty(key);
 
         if(value == null) {

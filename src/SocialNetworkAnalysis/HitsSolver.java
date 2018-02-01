@@ -1,75 +1,22 @@
 package SocialNetworkAnalysis;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 
 public class HitsSolver {
 
-    private String filePath;
-    private Map<String, UserNode> map = new HashMap<>();
+    private HitsSolver() {}
 
-    public void solve(String filePath) {
-        this.filePath = filePath;
-        readFile();
-        calculateHits();
-    }
-
-    public Map<String, UserNode> getMap() {
-        return map;
-    }
-
-    private void readFile() {
-        String line;
-
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)))) {
-            while((line = reader.readLine()) != null) {
-                String[] idPair = line.split(" ");
-                String inputId = idPair[0];
-                String outputId = idPair[1];
-                UserNode inputNode;
-                UserNode outputNode;
-
-                if(!map.containsKey(inputId)) {
-                    inputNode = UserNode.instanceByOutputDegree(inputId, 1);
-                    map.put(inputId, inputNode);
-                } else {
-                    inputNode = map.get(inputId);
-                    inputNode.incOutDegree(1);
-                }
-
-                if(!map.containsKey(outputId)) {
-                    outputNode = UserNode.instanceByInputDegree(outputId, 1);
-                    map.put(outputId, outputNode);
-                } else {
-                    outputNode = map.get(outputId);
-                    outputNode.incInputDegree(1);
-                }
-
-                inputNode.getOutputList().add(outputId);
-                outputNode.getInputList().add(inputId);
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void calculateHits() {
+    public static void solve(Map<String, UserNode> map) {
         // Parameters used to control the iteration
         int maxIter = Integer.parseInt(PropertiesUtil.getProperty("maxIter"));
         double minError = Double.parseDouble(PropertiesUtil.getProperty("minError"));
         // Start iterations
         System.out.println("Start calculating HITS. (Maximum " + maxIter + " iterations)");
         for(int i = 0; i < maxIter; i++) {
-
             // Used for normalization
             double maxHub = 0;
             double maxAuth = 0;
             double error = 0;
-
             // Update hubness and authness iteratively
             for(UserNode node : map.values()) {
                 double hub = node.getHubness();
