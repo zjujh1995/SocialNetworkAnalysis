@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d69456b4-06a1-4411-a902-78d78addda82" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/SocialNetworkAnalysis/DataReader.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/Client.class" afterPath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/Client.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/HitsSolver.class" afterPath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/HitsSolver.class" />
       <change beforePath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/PropertiesUtil.class" afterPath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/PropertiesUtil.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/SyncSolver.class" afterPath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/SyncSolver.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/properties.txt" afterPath="$PROJECT_DIR$/out/production/SocialNetworkAnalysis/SocialNetworkAnalysis/properties.txt" />
       <change beforePath="$PROJECT_DIR$/src/SocialNetworkAnalysis/Client.java" afterPath="$PROJECT_DIR$/src/SocialNetworkAnalysis/Client.java" />
+      <change beforePath="$PROJECT_DIR$/src/SocialNetworkAnalysis/DataReader.java" afterPath="$PROJECT_DIR$/src/SocialNetworkAnalysis/DataReader.java" />
       <change beforePath="$PROJECT_DIR$/src/SocialNetworkAnalysis/HitsSolver.java" afterPath="$PROJECT_DIR$/src/SocialNetworkAnalysis/HitsSolver.java" />
       <change beforePath="$PROJECT_DIR$/src/SocialNetworkAnalysis/PropertiesUtil.java" afterPath="$PROJECT_DIR$/src/SocialNetworkAnalysis/PropertiesUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/SocialNetworkAnalysis/SyncSolver.java" afterPath="$PROJECT_DIR$/src/SocialNetworkAnalysis/SyncSolver.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,97 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/UserNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="30" lean-forward="true" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
-                <element signature="e#598#599#0" expanded="true" />
-                <element signature="e#1553#1554#0" expanded="true" />
-                <element signature="e#1588#1589#0" expanded="true" />
-                <element signature="e#1631#1632#0" expanded="true" />
-                <element signature="e#1665#1666#0" expanded="true" />
-                <element signature="e#1711#1712#0" expanded="true" />
-                <element signature="e#1745#1746#0" expanded="true" />
-                <element signature="e#1792#1793#0" expanded="true" />
-                <element signature="e#1827#1828#0" expanded="true" />
-                <element signature="e#2031#2032#0" expanded="true" />
-                <element signature="e#2079#2080#0" expanded="true" />
-                <element signature="e#2130#2131#0" expanded="true" />
-                <element signature="e#2176#2177#0" expanded="true" />
-                <element signature="e#2222#2223#0" expanded="true" />
-                <element signature="e#2260#2261#0" expanded="true" />
-                <element signature="e#2308#2309#0" expanded="true" />
-                <element signature="e#2348#2349#0" expanded="true" />
-                <element signature="e#2394#2395#0" expanded="true" />
-                <element signature="e#2428#2429#0" expanded="true" />
-                <element signature="e#2475#2476#0" expanded="true" />
-                <element signature="e#2510#2511#0" expanded="true" />
-                <element signature="e#2568#2569#0" expanded="true" />
-                <element signature="e#2618#2619#0" expanded="true" />
-                <element signature="e#2668#2669#0" expanded="true" />
-                <element signature="e#2710#2711#0" expanded="true" />
-                <element signature="e#2758#2759#0" expanded="true" />
-                <element signature="e#2801#2802#0" expanded="true" />
-                <element signature="e#2851#2852#0" expanded="true" />
-                <element signature="e#2896#2897#0" expanded="true" />
-                <element signature="e#2930#2931#0" expanded="true" />
-                <element signature="e#2959#2960#0" expanded="true" />
-                <element signature="e#2995#2996#0" expanded="true" />
-                <element signature="e#3030#3031#0" expanded="true" />
-                <element signature="e#3065#3066#0" expanded="true" />
-                <element signature="e#3099#3100#0" expanded="true" />
-                <element signature="e#3133#3134#0" expanded="true" />
-                <element signature="e#3163#3164#0" expanded="true" />
-                <element signature="e#3198#3199#0" expanded="true" />
-                <element signature="e#3229#3230#0" expanded="true" />
-                <element signature="e#3267#3268#0" expanded="true" />
-                <element signature="e#3301#3302#0" expanded="true" />
-                <element signature="e#3340#3341#0" expanded="true" />
-                <element signature="e#3375#3376#0" expanded="true" />
-                <element signature="e#3415#3416#0" expanded="true" />
-                <element signature="e#3451#3452#0" expanded="true" />
-                <element signature="e#3487#3488#0" expanded="true" />
-                <element signature="e#3519#3520#0" expanded="true" />
-                <element signature="e#3561#3562#0" expanded="true" />
-                <element signature="e#3593#3594#0" expanded="true" />
-                <element signature="e#3636#3637#0" expanded="true" />
-                <element signature="e#3669#3670#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HitsSolver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/HitsSolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/DataReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SyncSolver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/SyncSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="-533">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1804#1805#0" expanded="true" />
@@ -123,11 +35,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="HitsSolver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/HitsSolver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-220">
+              <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PropertiesUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/PropertiesUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="-308">
+              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,8 +62,18 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/DataReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-53">
+              <caret line="25" column="36" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="25" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,13 +105,14 @@
         <option value="$PROJECT_DIR$/src/HitsSolver.java" />
         <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/UserProperty.java" />
-        <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/PropertiesUtil.java" />
         <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/UserNode.java" />
         <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/dataReader.java" />
-        <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/DataReader.java" />
-        <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/Client.java" />
         <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/SyncSolver.java" />
         <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/HitsSolver.java" />
+        <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/VariableChecker.java" />
+        <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/DataReader.java" />
+        <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/Client.java" />
+        <option value="$PROJECT_DIR$/src/SocialNetworkAnalysis/PropertiesUtil.java" />
       </list>
     </option>
   </component>
@@ -406,12 +341,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517290731099</updated>
       <workItem from="1517290732400" duration="28052000" />
-      <workItem from="1517380902480" duration="33577000" />
+      <workItem from="1517380902480" duration="41102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61629000" />
+    <option name="totallyTimeSpent" value="69154000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="0" />
@@ -464,7 +399,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -534,9 +471,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -602,10 +537,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/VariableChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/SyncSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="-533">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1804#1805#0" expanded="true" />
@@ -616,16 +559,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/HitsSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="-220">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -634,18 +569,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/DataReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="-53">
+          <caret line="25" column="36" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="25" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SocialNetworkAnalysis/PropertiesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state relative-caret-position="-308">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

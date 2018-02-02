@@ -1,16 +1,18 @@
 package SocialNetworkAnalysis;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Client {
 
     public static void main(String[] args) {
 
+        PropertiesUtil.checkProperty();
+
         String filePath = PropertiesUtil.getProperty("filePath");
         Map<String, UserNode> map = DataReader.readFile(filePath);
         HitsSolver.solve(map);
         SyncSolver.solve(map);
+
         map.forEach((k, v) -> System.out.println("nodeId: " + k
                 + "  inputDegree: " + v.getInputDegree()
                 + "  outputDegree: " + v.getOutputDegree()

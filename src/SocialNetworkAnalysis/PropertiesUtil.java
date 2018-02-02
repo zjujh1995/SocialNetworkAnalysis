@@ -22,6 +22,9 @@ public class PropertiesUtil {
             properties.setProperty("filePath", "/Users/hajiang2/Documents/CatchSync/test.txt");
             properties.setProperty("maxIter", "100");
             properties.setProperty("minError", "0.001");
+            properties.setProperty("gridBase", "2");
+            properties.setProperty("xAxisGrids", "40");
+            properties.setProperty("yAxisGrids", "80");
             properties.store(out, "Properties for Social Network Analysis.");
         } catch (Exception e) {
             e.printStackTrace();
@@ -32,18 +35,50 @@ public class PropertiesUtil {
 
         try(InputStream in = new FileInputStream(filePath + "properties.txt")) {
             properties.load(in);
-        } catch (IOException IO) {
-            resetProperties();
-            return getProperty(key);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        String value = properties.getProperty(key);
+        return properties.getProperty(key);
+    }
 
-        if(value == null) {
-            throw new NoSuchElementException("\nProperty of \"" + key + "\" was missing in the file. " +
-                    "Please correct it or delete the wrong file and run again to obtain the default properties.");
-        } else {
-            return value;
+    public static void checkProperty() {
+
+        try(InputStream in = new FileInputStream(filePath + "properties.txt")) {
+            properties.load(in);
+        } catch (IOException IO) {
+            resetProperties();
+            System.out.println("Property file was missing in the given path. " +
+                    "New file containing default properties has been built for the solution.");
+        }
+
+        properties.forEach((key, value) -> {
+            if(value == null) {
+                throw new NoSuchElementException("\"" + key + "\" is missing in the property file." +
+                        " Please correct it or delete the wrong file and run again to obtain the default properties.");
+            }
+        });
+
+        int maxIter = Integer.parseInt(properties.getProperty("maxIter"));
+        double minError = Double.parseDouble(properties.getProperty("minError"));
+        double gridBase = Double.parseDouble(properties.getProperty("gridBase"));
+        int xAxisGrids = Integer.parseInt(properties.getProperty("xAxisGrids"));
+        int yAxisGrids = Integer.parseInt(properties.getProperty("yAxisGrids"));
+
+        if(maxIter <= 0) {
+            throw new NumberFormatException("\"maxIter\" should be a positive integer. ");
+        }
+        if(minError <= 0) {
+            throw new NumberFormatException("\"minError\" should be a positive decimal.");
+        }
+        if(gridBase <= 1) {
+            throw new NumberFormatException("\"gridBase\" should be a decimal bigger than 1. ");
+        }
+        if(xAxisGrids <= 0) {
+            throw new NumberFormatException("\"xAxisGrid\" should be a positive integer. ");
+        }
+        if(yAxisGrids <= 0) {
+            throw new NumberFormatException("\"yAxisGrid\" should be a positive integer. ");
         }
     }
 }

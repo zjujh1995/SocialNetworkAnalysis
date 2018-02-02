@@ -1,12 +1,20 @@
 package SocialNetworkAnalysis;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class HitsSolver {
 
+    private static Map<String, UserNode> map = new HashMap<>();
+
     private HitsSolver() {}
 
-    public static void solve(Map<String, UserNode> map) {
+    public static void solve(Map<String, UserNode> mapIn) {
+        map = mapIn;
+        calculateHits();
+    }
+
+    private static void calculateHits() {
         // Parameters used to control the iteration
         int maxIter = Integer.parseInt(PropertiesUtil.getProperty("maxIter"));
         double minError = Double.parseDouble(PropertiesUtil.getProperty("minError"));

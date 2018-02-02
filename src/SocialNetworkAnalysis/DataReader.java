@@ -16,7 +16,9 @@ public class DataReader {
         String line;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)))) {
+
             while((line = reader.readLine()) != null) {
+
                 String[] idPair = line.split(" ");
                 String inputId = idPair[0];
                 String outputId = idPair[1];
@@ -30,7 +32,6 @@ public class DataReader {
                     inputNode = map.get(inputId);
                     inputNode.incOutDegree(1);
                 }
-
                 if(!map.containsKey(outputId)) {
                     outputNode = UserNode.instanceByInputDegree(outputId, 1);
                     map.put(outputId, outputNode);
