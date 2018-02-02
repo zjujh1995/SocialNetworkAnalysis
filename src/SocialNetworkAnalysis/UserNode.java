@@ -8,12 +8,14 @@ public class UserNode {
     private String userId;
     private int outputDegree = 0;
     private int inputDegree = 0;
-    private double hubness = 0;
-    private double authness = 0;
+    private double hubness = 1;
+    private double authness = 1;
     private double tempHubness = 0;
     private double tempAuthness = 0;
-    private double synchronicity = 0;
-    private double normality = 0;
+    private int xGridPos = -1;
+    private int yGridPos = -1;
+    private double synchronicity = -1;
+    private double normality = -1;
     private List<String> inputList = new ArrayList<>();
     private List<String> outputList = new ArrayList<>();
 
@@ -21,28 +23,19 @@ public class UserNode {
         this.userId = userId;
     }
 
-    private UserNode(String userId, int outputDegree, int inputDegree, double hubness, double authness,
-                    double tempHubness, double tempAuthness, double synchronicity, double normality) {
+    private UserNode(String userId, int outputDegree, int inputDegree) {
         this.userId = userId;
         this.outputDegree = outputDegree;
         this.inputDegree = inputDegree;
-        this.hubness = hubness;
-        this.authness = authness;
-        this.tempHubness = tempHubness;
-        this.tempAuthness = tempAuthness;
-        this.synchronicity = synchronicity;
-        this.normality = normality;
     }
 
 
     public static UserNode instanceByInputDegree(String userId, int inputDegree) {
-        return new UserNode(userId, 0, inputDegree, 1, 1,
-                0, 0, 0, 0);
+        return new UserNode(userId, 0, inputDegree);
     }
 
     public static UserNode instanceByOutputDegree(String userId, int outputDegree) {
-        return  new UserNode(userId, outputDegree, 0, 1, 1,
-                0, 0, 0, 0);
+        return  new UserNode(userId, outputDegree, 0);
     }
 
 
@@ -94,6 +87,14 @@ public class UserNode {
         tempAuthness /= div;
     }
 
+    public void setxGridPos(int xGridPos) {
+        this.xGridPos = xGridPos;
+    }
+
+    public void setyGridPos(int yGridPos) {
+        this.yGridPos = yGridPos;
+    }
+
     public void setSynchronicity(double synchronicity) {
         this.synchronicity = synchronicity;
     }
@@ -137,6 +138,14 @@ public class UserNode {
 
     public double getTempAuthness() {
         return tempAuthness;
+    }
+
+    public int getxGridPos() {
+        return xGridPos;
+    }
+
+    public int getyGridPos() {
+        return yGridPos;
     }
 
     public double getSynchronicity() {
