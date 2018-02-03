@@ -14,8 +14,4 @@ public class NodeJudger {
             }
         }
     }
-
-    public static void plot() {
-
-    }
 }

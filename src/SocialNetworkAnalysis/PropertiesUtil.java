@@ -12,6 +12,7 @@ public class PropertiesUtil {
     private static String propertiesPath = PropertiesUtil.class.getResource("").getPath();
     private static Properties properties = new Properties();
     private static String filePath;
+    private static String dataFileName;
     private static int maxIter;
     private static double minError;
     private static double gridBase;
@@ -25,13 +26,14 @@ public class PropertiesUtil {
     private static void resetProperties() {
         // Reset the properties file
         try(OutputStream out = new FileOutputStream(propertiesPath + "properties.txt")) {
-            properties.setProperty("filePath", "/Users/hajiang2/Documents/CatchSync/test.txt");
+            properties.setProperty("filePath", "/Users/hajiang2/Documents/CatchSync/");
+            properties.setProperty("dataFileName", "wiki-Vote.txt");
             properties.setProperty("maxIter", "100");
             properties.setProperty("minError", "0.001");
             properties.setProperty("gridBase", "2");
             properties.setProperty("xGridsNum", "40");
             properties.setProperty("yGridsNum", "80");
-            properties.setProperty("minOutputDegree", "1");
+            properties.setProperty("minOutputDegree", "5");
             properties.setProperty("alpha", "3");
             properties.store(out, "Properties for Social Network Analysis.");
         } catch (Exception e) {
@@ -55,6 +57,12 @@ public class PropertiesUtil {
             filePath = properties.getProperty("filePath");
         } catch (Exception e) {
             throw new NumberFormatException("\"filePath\" is incorrect. " + remind);
+        }
+
+        try {
+            dataFileName = properties.getProperty("dataFileName");
+        } catch (Exception e) {
+            throw new NumberFormatException("\"dataFileName\" is incorrect. " + remind);
         }
 
         try {
@@ -123,6 +131,10 @@ public class PropertiesUtil {
 
     public static String getFilePath() {
         return filePath;
+    }
+
+    public static String getDataFileName() {
+        return dataFileName;
     }
 
     public static int getMaxIter() {

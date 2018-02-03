@@ -8,7 +8,7 @@ public class SyncSolver {
     private static int[][] bgVector;
     private static int xGridsNum = PropertiesUtil.getxGridsNum();
     private static int yGridsNum = PropertiesUtil.getyGridsNum();
-//    private static int gridsNum = xGridsNum * yGridsNum;
+
     private SyncSolver() {}
 
     public static void solve(Map<String, UserNode> map) {

@@ -27,7 +27,7 @@ public class ResSolver {
         double resSum = 0;
         double resSSE = 0;
         int minOutputDegree = PropertiesUtil.getMinOutputDegree();
-        int legalNum = 0;  // Only counts node whose outputDegree >= minOutputDegree
+        int legalNum = 0;  // Only counts nodes whose outputDegree >= minOutputDegree
         for(UserNode node : map.values()) {
             double norm = node.getNormality();
             double res = node.getSynchronicity() - syncLowerBound(norm);
