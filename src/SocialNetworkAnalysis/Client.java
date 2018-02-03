@@ -27,18 +27,20 @@ public class Client {
 
         NodeJudger.judge(map);
         long stage5Time = System.currentTimeMillis();
-        System.out.println("\nComplete solving residuals. Stage costs " + (stage5Time - stage4Time) + " ms.\n");
+        System.out.println("\nComplete judging nodes. Stage costs " + (stage5Time - stage4Time) + " ms.\n");
 
-        map.forEach((k, v) -> System.out.println("nodeId: " + k
-                + "  inputDegree: " + v.getInputDegree()
-                + "  outputDegree: " + v.getOutputDegree()
-                + "  hubness: " + String.format("%.4f", v.getHubness())
-                + "  authness " + String.format("%.4f", v.getAuthness())
-                + "  xGridPos " + v.getxGridPos()
-                + "  yGridPos " + v.getyGridPos()
-                + "  sync: " + String.format("%.4f", v.getSynchronicity())
-                + "  norm: " + String.format("%.4f", v.getNormality())
-                + "  res: " + String.format("%.4f", v.getResidual())
-                + "  legal: " + v.getJudgement()));
+        map.forEach((k, v) -> {
+            if(v.getOutputDegree() >= PropertiesUtil.getMinOutputDegree()){
+                System.out.println("nodeId: " + k
+                    + "  inputDegree: " + v.getInputDegree()
+                    + "  outputDegree: " + v.getOutputDegree()
+                    + "  hubness: " + String.format("%.4f", v.getHubness())
+                    + "  authness " + String.format("%.4f", v.getAuthness())
+                    + "  xGridPos " + v.getxGridPos()
+                    + "  yGridPos " + v.getyGridPos()
+                    + "  sync: " + String.format("%.4f", v.getSynchronicity())
+                    + "  norm: " + String.format("%.4f", v.getNormality())
+                    + "  res: " + String.format("%.4f", v.getResidual())
+                    + "  normal: " + v.getJudgement());}});
     }
 }

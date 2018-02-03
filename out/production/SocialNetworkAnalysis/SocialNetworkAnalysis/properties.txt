@@ -1,10 +1,10 @@
 #Properties for Social Network Analysis.
 #Sat Feb 03 10:48:10 CST 2018
-minOutputDegree=1
+minOutputDegree=2
 yGridsNum=80
 xGridsNum=40
 minError=0.001
 gridBase=2
-filePath=/Users/hajiang2/Documents/CatchSync/test.txt
+filePath=/Users/hajiang2/Documents/CatchSync/wiki-Vote.txt
 maxIter=100
 alpha=3

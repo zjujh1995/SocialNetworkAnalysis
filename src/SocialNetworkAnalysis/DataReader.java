@@ -2,6 +2,7 @@ package SocialNetworkAnalysis;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,7 @@ public class DataReader {
 
             while((line = reader.readLine()) != null) {
 
-                String[] idPair = line.split(" ");
+                String[] idPair = line.split("[ |\t]");
                 String inputId = idPair[0];
                 String outputId = idPair[1];
                 UserNode inputNode;
@@ -44,8 +45,8 @@ public class DataReader {
                 outputNode.getInputList().add(inputId);
             }
         }
-        catch (Exception e) {
-            e.printStackTrace();
+        catch (IOException io) {
+            io.printStackTrace();
         }
         return map;
     }

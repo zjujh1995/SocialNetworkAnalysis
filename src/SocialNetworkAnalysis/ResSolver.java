@@ -4,7 +4,6 @@ import java.util.Map;
 
 public class ResSolver {
 
-    private static int mapSize;
     private static int xGridsNum = PropertiesUtil.getxGridsNum();
     private static int yGridsNum = PropertiesUtil.getyGridsNum();
     private static int gridsNum = xGridsNum * yGridsNum;
@@ -15,12 +14,12 @@ public class ResSolver {
     private ResSolver() {}
 
     public static void solve(Map<String, UserNode> map) {
-        mapSize = map.size();
+        int mapSize = map.size();
         bgSync = (double) SyncSolver.dotProduct(SyncSolver.getBgVector(), SyncSolver.getBgVector()) / mapSize / mapSize;
         calcRes(map);
     }
 
-    public static double lowerBound(double norm) {
+    public static double syncLowerBound(double norm) {
         return (- gridsNum * norm * norm + 2 * norm - bgSync) / (1 - gridsNum * bgSync);
     }
 
@@ -29,12 +28,11 @@ public class ResSolver {
         double resSSE = 0;
         int minOutputDegree = PropertiesUtil.getMinOutputDegree();
         int legalNum = 0;  // Only counts node whose outputDegree >= minOutputDegree
-
         for(UserNode node : map.values()) {
             double norm = node.getNormality();
-            double res = node.getSynchronicity() - lowerBound(norm);
-            node.setResidual(res);
+            double res = node.getSynchronicity() - syncLowerBound(norm);
             if(node.getOutputDegree() >= minOutputDegree) {
+                node.setResidual(res);
                 resSum += res;
                 legalNum ++;
             }

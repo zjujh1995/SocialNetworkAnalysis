@@ -16,7 +16,7 @@ public class UserNode {
     private int yGridPos = -1;
     private double synchronicity = -1;
     private double normality = -1;
-    private double residual = 0;
+    private double residual = -1;
     private boolean judgement = true;
     private List<String> inputList = new ArrayList<>();
     private List<String> outputList = new ArrayList<>();

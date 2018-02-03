@@ -51,12 +51,12 @@ public class SyncSolver {
                 UserNode fgNode = map.get(outputId);
                 fgVector[fgNode.getxGridPos() - 1][fgNode.getyGridPos() - 1] ++;
             }
-            double sync = outputList.size() == 0 ? 0 :
-                    (double) dotProduct(fgVector, fgVector) / outputList.size() / outputList.size();
-            double norm = outputList.size() == 0 ? 1 :
-                    (double) dotProduct(fgVector, bgVector) / outputList.size() / map.size();
-            node.setSynchronicity(sync);
-            node.setNormality(norm);
+            if(outputList.size() >= PropertiesUtil.getMinOutputDegree()) {
+                double sync = (double) dotProduct(fgVector, fgVector) / outputList.size() / outputList.size();
+                double norm = (double) dotProduct(fgVector, bgVector) / outputList.size() / map.size();
+                node.setSynchronicity(sync);
+                node.setNormality(norm);
+            }
         }
     }
 
