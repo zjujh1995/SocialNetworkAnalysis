@@ -7,13 +7,13 @@ public class HitsSolver {
     private HitsSolver() {}
 
     public static void solve(Map<String, UserNode> map) {
-        calculateHits(map);
+        calcHits(map);
     }
 
-    private static void calculateHits(Map<String, UserNode> map) {
+    private static void calcHits(Map<String, UserNode> map) {
         // Parameters used to control the iteration
-        int maxIter = Integer.parseInt(PropertiesUtil.getProperty("maxIter"));
-        double minError = Double.parseDouble(PropertiesUtil.getProperty("minError"));
+        int maxIter = PropertiesUtil.getMaxIter();
+        double minError = PropertiesUtil.getMinError();
         // Start iterations
         System.out.println("Start calculating HITS. (Maximum " + maxIter + " iterations)");
         for(int i = 0; i < maxIter; i++) {

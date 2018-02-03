@@ -5,8 +5,8 @@ import java.util.Map;
 public class Client {
 
     public static void main(String[] args) {
-        PropertiesUtil.checkProperties();
-        String filePath = PropertiesUtil.getProperty("filePath");
+        PropertiesUtil.initProperties();
+        String filePath = PropertiesUtil.getFilePath();
         long startTime = System.currentTimeMillis();
 
         Map<String, UserNode> map = DataReader.readFile(filePath);
@@ -19,7 +19,15 @@ public class Client {
 
         SyncSolver.solve(map);
         long stage3Time = System.currentTimeMillis();
-        System.out.println("\nComplete solving sync and norm. Stage costs " + (stage3Time - stage2Time) + " ms.\n");
+        System.out.println("\nComplete solving syncs and norms. Stage costs " + (stage3Time - stage2Time) + " ms.\n");
+
+        ResSolver.solve(map);
+        long stage4Time = System.currentTimeMillis();
+        System.out.println("\nComplete solving residuals. Stage costs " + (stage4Time - stage3Time) + " ms.\n");
+
+        NodeJudger.judge(map);
+        long stage5Time = System.currentTimeMillis();
+        System.out.println("\nComplete solving residuals. Stage costs " + (stage5Time - stage4Time) + " ms.\n");
 
         map.forEach((k, v) -> System.out.println("nodeId: " + k
                 + "  inputDegree: " + v.getInputDegree()
@@ -29,6 +37,8 @@ public class Client {
                 + "  xGridPos " + v.getxGridPos()
                 + "  yGridPos " + v.getyGridPos()
                 + "  sync: " + String.format("%.4f", v.getSynchronicity())
-                + "  norm: " + String.format("%.4f", v.getNormality())));
+                + "  norm: " + String.format("%.4f", v.getNormality())
+                + "  res: " + String.format("%.4f", v.getResidual())
+                + "  legal: " + v.getJudgement()));
     }
 }

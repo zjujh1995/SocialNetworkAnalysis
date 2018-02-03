@@ -16,6 +16,8 @@ public class UserNode {
     private int yGridPos = -1;
     private double synchronicity = -1;
     private double normality = -1;
+    private double residual = 0;
+    private boolean judgement = true;
     private List<String> inputList = new ArrayList<>();
     private List<String> outputList = new ArrayList<>();
 
@@ -103,6 +105,14 @@ public class UserNode {
         this.normality = normality;
     }
 
+    public void setResidual(double residual) {
+        this.residual = residual;
+    }
+
+    public void setJudgement(boolean judgement) {
+        this.judgement = judgement;
+    }
+
     public void addInputList(String inputId) {
         this.inputList.add(inputId);
     }
@@ -154,6 +164,14 @@ public class UserNode {
 
     public double getNormality() {
         return normality;
+    }
+
+    public double getResidual() {
+        return residual;
+    }
+
+    public boolean getJudgement() {
+        return judgement;
     }
 
     public List<String> getInputList() {
