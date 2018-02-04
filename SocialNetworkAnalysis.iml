@@ -16,5 +16,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="Python 3.6 interpreter library" level="application" />
   </component>
 </module>

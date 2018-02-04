@@ -14,12 +14,11 @@ public class ResSolver {
     private ResSolver() {}
 
     public static void solve(Map<String, UserNode> map) {
-        int mapSize = map.size();
-        bgSync = (double) SyncSolver.dotProduct(SyncSolver.getBgVector(), SyncSolver.getBgVector()) / mapSize / mapSize;
+        bgSync = SyncSolver.dotProduct(SyncSolver.getBgVector(), SyncSolver.getBgVector());
         calcRes(map);
     }
 
-    public static double syncLowerBound(double norm) {
+    private static double syncLowerBound(double norm) {
         return (- gridsNum * norm * norm + 2 * norm - bgSync) / (1 - gridsNum * bgSync);
     }
 
@@ -49,6 +48,14 @@ public class ResSolver {
         }
         resStd = Math.sqrt(resSSE / legalNum);
         System.out.println("resMean: " + resMean + "  resStd: " + resStd);
+    }
+
+    public static int getGridsNum() {
+        return gridsNum;
+    }
+
+    public static double getBgSync() {
+        return bgSync;
     }
 
     public static double getResMean() {

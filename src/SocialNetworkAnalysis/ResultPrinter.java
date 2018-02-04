@@ -36,5 +36,15 @@ public class ResultPrinter {
         } catch(IOException io) {
             io.printStackTrace();
         }
+
+        try(FileWriter fw = new FileWriter(new File(filePath + "lineParas.csv"))) {
+            CsvWriter writer = new CsvWriter(fw, new CsvWriterSettings());
+            writer.writeHeaders("gridsNum", "bgSync");
+            writer.writeRow(ResSolver.getGridsNum(), ResSolver.getBgSync());
+            writer.flush();
+            writer.close();
+        } catch(IOException io) {
+            io.printStackTrace();
+        }
     }
 }

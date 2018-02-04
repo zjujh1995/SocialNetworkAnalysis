@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class SyncSolver {
 
-    private static int[][] bgVector;
     private static int xGridsNum = PropertiesUtil.getxGridsNum();
     private static int yGridsNum = PropertiesUtil.getyGridsNum();
+    private static double[][] bgVector = new double[xGridsNum][yGridsNum];
 
     private SyncSolver() {}
 
@@ -16,9 +16,9 @@ public class SyncSolver {
         calcSyncNorm(map);
     }
 
-    private static int[][] calcGridPos(Map<String, UserNode> map) {
+    private static double[][] calcGridPos(Map<String, UserNode> map) {
         double gridBase = PropertiesUtil.getGridBase();
-        int[][] bgVector = new int[xGridsNum][yGridsNum];
+        double bgUnit = 1.0 / map.size();
         for(UserNode node : map.values()) {
             double xCursor = 1;
             node.setxGridPos(1);  // If x is very small, it should be in the leftest column of grids.
@@ -38,30 +38,31 @@ public class SyncSolver {
                 }
                 yCursor *= gridBase;
             }
-            bgVector[node.getxGridPos() - 1][node.getyGridPos() - 1] ++;
+            bgVector[node.getxGridPos() - 1][node.getyGridPos() - 1] += bgUnit;
         }
         return bgVector;
     }
 
     private static void calcSyncNorm(Map<String, UserNode> map) {
         for(UserNode node : map.values()) {
-            int[][] fgVector = new int[xGridsNum][yGridsNum];
             List<String> outputList = node.getOutputList();
+            double[][] fgVector = new double[xGridsNum][yGridsNum];
+            double fgUnit = 1.0 / outputList.size();
             for(String outputId : outputList) {
                 UserNode fgNode = map.get(outputId);
-                fgVector[fgNode.getxGridPos() - 1][fgNode.getyGridPos() - 1] ++;
+                fgVector[fgNode.getxGridPos() - 1][fgNode.getyGridPos() - 1] += fgUnit;
             }
             if(outputList.size() >= PropertiesUtil.getMinOutputDegree()) {
-                double sync = (double) dotProduct(fgVector, fgVector) / outputList.size() / outputList.size();
-                double norm = (double) dotProduct(fgVector, bgVector) / outputList.size() / map.size();
+                double sync = dotProduct(fgVector, fgVector);
+                double norm = dotProduct(fgVector, bgVector);
                 node.setSynchronicity(sync);
                 node.setNormality(norm);
             }
         }
     }
 
-    public static int dotProduct(int[][] vector1, int[][] vector2) {
-        int dot = 0;
+    public static double dotProduct(double[][] vector1, double[][] vector2) {
+        double dot = 0;
         for(int i = 0; i < vector1.length; i++) {
             for(int j = 0; j < vector1[i].length; j++) {
                 dot += vector1[i][j] * vector2[i][j];
@@ -70,7 +71,7 @@ public class SyncSolver {
         return dot;
     }
 
-    public static int[][] getBgVector() {
+    public static double[][] getBgVector() {
         return bgVector;
     }
 

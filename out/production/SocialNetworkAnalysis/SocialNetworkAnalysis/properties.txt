@@ -8,4 +8,10 @@ gridBase=2
 yGridsNum=80
 maxIter=100
 minError=0.001
-dataFileName=wiki-Vote.txt
+dataFileName=twitter_rv.net
+
+
+
+wiki-Vote.txt
+twitter_rv.net
+
