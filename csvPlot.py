@@ -15,37 +15,28 @@ plt.figure(figsize=(12, 8))
 
 def plot_input_auth():
     plt.subplot(2, 1, 1)
-    auth = np.array(df_result["authness"]).tolist()
-    input = np.array(df_result["inputDegree"]).tolist()
+    auth = np.array(df_result["authness"])
+    input = np.array(df_result["inputDegree"])
     plt.xscale("log")
     plt.yscale("log")
     plt.loglog(auth, input, marker='o', color='g', label="normal_nodes", linewidth=0)
-    # plt.hist2d(auth, input)
-    # plt.colorbar()
     plt.xlabel("authness")
     plt.ylabel("intputDegree")
-    # plt.xlim(0, 0.1)
-    # plt.ylim(1e0)
+
 
 
 def plot_baseline():
-    plt.subplot(1, 1, 1)
+    plt.subplot(2, 1, 2)
     x = np.linspace(0, 0.3, 1000)
     y = cal_baseline(x)
     plt.plot(x, y, color="r")
 
 
 def plot_norm_sync():
-    plt.subplot(1, 1, 1)
-    normal_norm = np.array(df_normal["normality"]).tolist()
-    normal_sync = np.array(df_normal["synchronicity"]).tolist()
-    abnormal_norm = np.array(df_abnormal["normality"]).tolist()
-    abnormal_sync = np.array(df_abnormal["synchronicity"]).tolist()
-    # plt.scatter(normal_norm, normal_sync, marker='o', color='g', label="normal_nodes")
-    # plt.scatter(abnormal_norm, abnormal_sync, marker='x', color='r', label="abnormal_nodes")
-    norm = np.array(df_result["normality"]).tolist()
-    sync = np.array(df_result["synchronicity"]).tolist()
-    plt.hist2d(norm, sync, bins=100, norm=LogNorm())
+    plt.subplot(2, 1, 2)
+    norm = np.array(df_result["normality"])
+    sync = np.array(df_result["synchronicity"])
+    plt.hist2d(norm, sync, bins=(100, 50), norm=LogNorm())
     plt.colorbar()
     plt.xlabel("normality")
     plt.ylabel("synchronicity")
@@ -57,7 +48,7 @@ def cal_baseline(norm):
 
 
 if __name__ == "__main__":
-    # plot_input_auth()
+    plot_input_auth()
     plot_baseline()
     plot_norm_sync()
     plt.show()

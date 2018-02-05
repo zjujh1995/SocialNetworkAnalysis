@@ -20,6 +20,8 @@ public class PropertiesUtil {
     private static int yGridsNum;
     private static int minOutputDegree;
     private static double alpha;
+    private static int readLimit;
+    private static int readInterval;
 
     private PropertiesUtil() {}
 
@@ -27,7 +29,7 @@ public class PropertiesUtil {
         // Reset the properties file
         try(OutputStream out = new FileOutputStream(propertiesPath + "properties.txt")) {
             properties.setProperty("filePath", "/Users/hajiang2/Documents/CatchSync/");
-            properties.setProperty("dataFileName", "wiki-Vote.txt");
+            properties.setProperty("dataFileName", "twitter_rv.net");
             properties.setProperty("maxIter", "100");
             properties.setProperty("minError", "0.001");
             properties.setProperty("gridBase", "2");
@@ -35,6 +37,8 @@ public class PropertiesUtil {
             properties.setProperty("yGridsNum", "80");
             properties.setProperty("minOutputDegree", "5");
             properties.setProperty("alpha", "3");
+            properties.setProperty("readLimit", "1000000");
+            properties.setProperty("readInterval", "1");
             properties.store(out, "Properties for Social Network Analysis.");
         } catch (Exception e) {
             e.printStackTrace();
@@ -127,6 +131,24 @@ public class PropertiesUtil {
         } catch (NumberFormatException e) {
             throw new NumberFormatException("\"alpha\" should not be negative. " + remind);
         }
+
+        try {
+            readLimit = Integer.parseInt(properties.getProperty("readLimit"));
+            if(readLimit <= 0) {
+                throw new NumberFormatException("\"readLimit\" should be positive integer. " + remind);
+            }
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("\"readLimit\" should be positive integer. " + remind);
+        }
+
+        try {
+            readInterval = Integer.parseInt(properties.getProperty("readInterval"));
+            if(readInterval <= 0) {
+                throw new NumberFormatException("\"readInterval\" should be a positive integer. " + remind);
+            }
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("\"readInterval\" should be a positive integer. " + remind);
+        }
     }
 
     public static String getFilePath() {
@@ -163,5 +185,13 @@ public class PropertiesUtil {
 
     public static double getAlpha() {
         return alpha;
+    }
+
+    public static int getReadLimit() {
+        return readLimit;
+    }
+
+    public static int getReadInterval() {
+        return readInterval;
     }
 }

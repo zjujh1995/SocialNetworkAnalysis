@@ -1,17 +1,17 @@
 #Properties for Social Network Analysis.
-#Sat Feb 03 15:02:18 CST 2018
+#Mon Feb 05 13:53:17 CST 2018
 minOutputDegree=5
 xGridsNum=40
 filePath=/Users/hajiang2/Documents/CatchSync/
 alpha=3
+readInterval=1
 gridBase=2
 yGridsNum=80
 maxIter=100
+readLimit=1000000
 minError=0.001
 dataFileName=twitter_rv.net
 
 
-
 wiki-Vote.txt
 twitter_rv.net
-

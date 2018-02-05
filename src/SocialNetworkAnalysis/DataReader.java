@@ -15,21 +15,25 @@ public class DataReader {
 
         Map<String, UserNode> map = new HashMap<>();
         String line;
-        int maxNodeNum = 3000000;
-        int read = 0;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)))) {
-
-            while((line = reader.readLine()) != null && maxNodeNum > 0) {
-                read ++;
-                if(read == 1000) {
-                    read = 0;
+            int read = 0;
+            int cur = 0;
+            int readLimit = PropertiesUtil.getReadLimit();
+            int readInterval = PropertiesUtil.getReadInterval();
+            while((line = reader.readLine()) != null && read < readLimit) {
+                cur ++;
+                if(cur == readInterval) {
+                    cur = 0;
+                    read ++;
+                    if(read % 100000 == 0) {
+                        System.out.println("Read " + read + " records.");
+                    }
                     String[] idPair = line.split("[ |\t]");
                     String inputId = idPair[0];
                     String outputId = idPair[1];
                     UserNode inputNode;
                     UserNode outputNode;
-
                     if (!map.containsKey(inputId)) {
                         inputNode = UserNode.instanceByOutputDegree(inputId, 1);
                         map.put(inputId, inputNode);
@@ -47,11 +51,9 @@ public class DataReader {
 
                     inputNode.getOutputList().add(outputId);
                     outputNode.getInputList().add(inputId);
-
-                    maxNodeNum--;
                 }
             }
-            System.out.println("Read " + (3000000 - maxNodeNum) + " nodes.");
+            System.out.println("\nTotally read " + read + " records.\n");
         }
         catch (IOException io) {
             io.printStackTrace();
