@@ -8,9 +8,9 @@ readInterval=1
 gridBase=2
 yGridsNum=80
 maxIter=100
-readLimit=1000000
+readLimit=10000000
 minError=0.001
-dataFileName=twitter_rv.net
+dataFileName=wiki-Vote.txt
 
 
 wiki-Vote.txt

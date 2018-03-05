@@ -33,7 +33,7 @@ def plot_baseline():
 
 
 def plot_norm_sync():
-    plt.subplot(2, 1, 2)
+    # plt.subplot(2, 1, 2)
     norm = np.array(df_result["normality"])
     sync = np.array(df_result["synchronicity"])
     plt.hist2d(norm, sync, bins=(100, 50), norm=LogNorm())
@@ -48,8 +48,8 @@ def cal_baseline(norm):
 
 
 if __name__ == "__main__":
-    plot_input_auth()
-    plot_baseline()
+    # plot_input_auth()
+    # plot_baseline()
     plot_norm_sync()
     plt.show()
 
